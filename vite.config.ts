@@ -26,7 +26,7 @@ function resolveSDK(path: string) {
 
 
 export default defineConfig({
-    base: "./",
+    base: "/widget/nico-chat/",
     build: {
         outDir: "dist",
         emptyOutDir: true,
