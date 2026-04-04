@@ -1,0 +1,198 @@
+{
+    "id": "nico-chat",
+    "name": "Nico Chat",
+    "created_at": "2026-04-01T10:30:00-03:00",
+    "updated_at": "2026-04-01T10:30:00-03:00",
+    "version": "1.0.0",
+    "description": "Scrolling chat messages across the screen.",
+    "category": "chat",
+    "properties": {
+        "integrations": [
+            {
+                "provider": "twitch",
+                "allow_multiple": false,
+                "is_required": true
+            }
+        ]
+    },
+    "settings": [
+        {
+            "id": "global",
+            "type": "group",
+            "label": "Global",
+            "children": [
+                {
+                    "id": "maxMessages",
+                    "type": "number",
+                    "label": "Max Messages on Screen",
+                    "description": "Maximum simultaneous messages visible at once",
+                    "default": 30,
+                    "num_min": 1,
+                    "num_max": 200
+                },
+                {
+                    "id": "maxMessageLength",
+                    "type": "number",
+                    "label": "Max Message Length",
+                    "description": "Truncate messages longer than this (0 = no limit)",
+                    "default": 0,
+                    "num_min": 0,
+                    "num_max": 500
+                },
+                {
+                    "id": "scrollDuration",
+                    "type": "number",
+                    "label": "Scroll Duration (sec)",
+                    "description": "How long it takes a message to cross the screen",
+                    "default": 10,
+                    "num_min": 1,
+                    "num_max": 60
+                },
+                {
+                    "id": "direction",
+                    "type": "select",
+                    "label": "Scroll Direction",
+                    "default": "rtl",
+                    "options": [
+                        {
+                            "value": "rtl",
+                            "label": "Right to Left"
+                        },
+                        {
+                            "value": "ltr",
+                            "label": "Left to Right"
+                        }
+                    ]
+                },
+                {
+                    "id": "userCooldown",
+                    "type": "number",
+                    "label": "User Cooldown (ms)",
+                    "description": "Minimum time between messages from the same user",
+                    "default": 0,
+                    "num_min": 0,
+                    "num_max": 60000
+                },
+                {
+                    "id": "allowedUsers",
+                    "type": "select",
+                    "label": "Who can send messages",
+                    "default": "all",
+                    "options": [
+                        {
+                            "value": "all",
+                            "label": "Everyone"
+                        },
+                        {
+                            "value": "subs",
+                            "label": "Subscribers only"
+                        },
+                        {
+                            "value": "vips",
+                            "label": "VIPs only"
+                        },
+                        {
+                            "value": "mods",
+                            "label": "Moderators only"
+                        }
+                    ]
+                },
+                {
+                    "id": "exclude",
+                    "type": "text",
+                    "label": "Ignored Users",
+                    "description": "Comma-separated usernames to ignore",
+                    "default": "nightbot,streamelements"
+                }
+            ]
+        },
+        {
+            "id": "appearance",
+            "type": "group",
+            "label": "Appearance",
+            "children": [
+                {
+                    "id": "messageTextColor",
+                    "type": "color",
+                    "label": "Text Color",
+                    "default": "#ffffff"
+                },
+                {
+                    "id": "fontSize",
+                    "type": "number",
+                    "label": "Font Size (px)",
+                    "default": 24,
+                    "num_min": 10,
+                    "num_max": 72
+                },
+                {
+                    "id": "fontFamily",
+                    "type": "select",
+                    "label": "Font",
+                    "default": "Arial",
+                    "options": [
+                        {
+                            "value": "Arial",
+                            "label": "Arial"
+                        },
+                        {
+                            "value": "Impact",
+                            "label": "Impact"
+                        },
+                        {
+                            "value": "Comic Sans MS",
+                            "label": "Comic Sans"
+                        },
+                        {
+                            "value": "Courier New",
+                            "label": "Courier New"
+                        },
+                        {
+                            "value": "Georgia",
+                            "label": "Georgia"
+                        },
+                        {
+                            "value": "Tahoma",
+                            "label": "Tahoma"
+                        },
+                        {
+                            "value": "Verdana",
+                            "label": "Verdana"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "emotes",
+            "type": "group",
+            "label": "Emotes",
+            "children": [
+                {
+                    "id": "channelEmotes",
+                    "type": "boolean",
+                    "label": "Channel Emotes (Twitch)",
+                    "default": true
+                },
+                {
+                    "id": "ffz",
+                    "type": "boolean",
+                    "label": "FrankerFaceZ (FFZ)",
+                    "default": true
+                },
+                {
+                    "id": "bttv",
+                    "type": "boolean",
+                    "label": "BetterTTV (BTTV)",
+                    "default": true
+                },
+                {
+                    "id": "seventv",
+                    "type": "boolean",
+                    "label": "7TV",
+                    "default": true
+                }
+            ]
+        }
+    ]
+}
